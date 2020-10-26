@@ -29,7 +29,7 @@ export default function App (){
           </View>
           <View style={styles.active}></View>
           <View style={styles.add}>
-            <Ionicons name="ios-add" size={48} color="#MDFD8C8" 
+            <Ionicons name="ios-add" size={48} color="#000000" 
             style={{ marginTop: 6, marginLeft: 2}}></Ionicons>
           </View>
         </View>
@@ -39,12 +39,12 @@ export default function App (){
           <Text style={[styles.text, { color: "#AEB5BC", fontSize: 14}]}>Backend Developer</Text>
         </View>
 
-        <View style={styles.infoContainer}>
+        <View style={styles.statsContainer}>
           <View style={styles.statsBox}>
             <Text style={[styles.text, { fontSize: 24 }]}>483</Text>
             <Text style={[styles.text, styles.subText]}>Posts</Text>
           </View>
-          <View style={[styles.statsBox, { borderColor: "#DFD8C8", bvorderLeftWidth: 1}]}>
+          <View style={[styles.statsBox, { borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1}]}>
             <Text style={[styles.text, { fontSize: 24}]}>46k</Text>
             <Text style={[styles.text, styles.subText]}>Followers</Text>
           </View>
@@ -53,6 +53,21 @@ export default function App (){
           <Text style={[styles.text, styles.subText]}>Following</Text>
           </View>
         </View>
+
+        <View style={{ marginTop: 32}} >
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={styles.mediaImageContainer}>
+              <Image source={require("./assets/media1.jpg")} style={styles.image} redizeMode="cover"></Image>
+            </View>
+            <View style={styles.mediaImageContainer}>
+              <Image source={require("./assets/media2.jpg")} style={styles.image} redizeMode="cover"></Image>
+            </View>
+            <View style={styles.mediaImageContainer}>
+              <Image source={require("./assets/media3.jpg")} style={styles.image} redizeMode="cover"></Image>
+            </View>
+          </ScrollView>
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   )
@@ -91,33 +106,33 @@ const styles = StyleSheet.create({
     overflow: "hidden"
   },
   dm: {
-   // backgroundColor: "#ff00ff",
+    backgroundColor: "#B8B8B8",
     position: "absolute",
-    top: 20,
-    width:40,
-    height: 40,
-    borderRadius: 20,
+    bottom: 0,
+    width: 50,
+    height: 50,
+    borderRadius: 50,
     alignItems: "center",
     justifyContent: "center"
   },
   active: {
-    //backgroundColor: "#34FFB9",
+    backgroundColor: "#34FFB9",
     position: "absolute",
-    bottom: 28,
+    top: 28,
     left:10,
     padding: 4,
     height: 20,
     width: 20,
-    borderRadius:10
+    borderRadius:40
   },
   add: {
-   // backgroundColor: "ff00ff",
+   backgroundColor: "#B8B8B8",
     position: "absolute",
     bottom: 0,
-    right: 0,
+    right: -10,
     width: 60,
     height: 60,
-    borderRadius: 30,
+    borderRadius: 40,
     alignItems: "center",
     justifyContent: 'center'
   },
@@ -135,7 +150,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 1
   },
-  medialImageContainer: {
+  mediaImageContainer: {
     width: 180,
     height:200,
     borderRadius: 12,
